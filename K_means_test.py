@@ -22,9 +22,8 @@ if __name__ == '__main__':
     km = KMeans(n_clusters)
     label = km.fit_predict(data)
     expenses = numpy.sum(km.cluster_centers_, axis=1)
-    CityCluster = []
-    for i in range(n_clusters):
-        CityCluster.append([])
+
+    CityCluster = [[] for i in range(n_clusters)]
     for i in range(len(cityName)):
         CityCluster[label[i]].append(cityName[i])
 
