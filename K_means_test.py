@@ -4,9 +4,10 @@ from sklearn.cluster import KMeans
 
 n_clusters = 3
 
-def loadData(filePath):
+
+def load_data(file_path):
     # fr = open(filePath, 'r+', encoding='utf-8')
-    fr = open(filePath, 'r+')
+    fr = open(file_path, 'r+')
     lines = fr.readlines()
     retData = []
     retCityName = []
@@ -17,7 +18,7 @@ def loadData(filePath):
     return retData, retCityName
 
 if __name__ == '__main__':
-    data, cityName = loadData('data/city.txt')
+    data, cityName = load_data('data/city.txt')
     km = KMeans(n_clusters)
     label = km.fit_predict(data)
     expenses = numpy.sum(km.cluster_centers_, axis=1)
@@ -27,7 +28,7 @@ if __name__ == '__main__':
     for i in range(len(cityName)):
         CityCluster[label[i]].append(cityName[i])
 
-    for i in range(len(CityCluster)):
+    for i in range(n_clusters):
         print("Expenses:%.2f" % expenses[i])
         print(CityCluster[i])
 
