@@ -11,7 +11,7 @@ def loadData(filePath):
     retData = []
     retCityName = []
     for line in lines:
-        items = line.strip().split(",")
+        items = line.strip().split(',')
         retCityName.append(items[0])
         retData.append([float(items[i]) for i in range(1, len(items))])
     return retData, retCityName
