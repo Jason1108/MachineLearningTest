@@ -2,7 +2,7 @@
 import numpy
 from sklearn.cluster import KMeans
 
-n_clusters = 15
+n_clusters = 3
 
 def loadData(filePath):
     # fr = open(filePath, 'r+', encoding='utf-8')
@@ -22,7 +22,7 @@ if __name__ == '__main__':
     label = km.fit_predict(data)
     expenses = numpy.sum(km.cluster_centers_, axis=1)
     CityCluster = []
-    for i in range(0, n_clusters):
+    for i in range(n_clusters):
         CityCluster.append([])
     for i in range(len(cityName)):
         CityCluster[label[i]].append(cityName[i])
