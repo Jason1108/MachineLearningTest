@@ -12,3 +12,5 @@ for i in range(m):
         x, y, z = img.getpixel((i, j))
         data.append([x / 256.0, y / 256.0, z / 256.0])
 f.close()
+
+# to be continue..

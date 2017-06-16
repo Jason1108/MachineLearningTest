@@ -5,3 +5,12 @@ http://www.icourse163.org/course/BIT-1001872001
 
 #### 2. 安装numpy, scipy, matplotlib, scikit-learn
 http://www.lfd.uci.edu/~gohlke/pythonlibs/
+
+
+
+
+
+### Unsupervised learning
+- PCA
+- NMF
+- K-Means
